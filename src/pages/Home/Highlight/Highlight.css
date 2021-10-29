@@ -1,0 +1,21 @@
+
+.highlight-main{
+    padding:7rem 0;
+    background-image: url('https://i.ibb.co/X7NKXtX/see.png');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    position: relative;
+    z-index:5;
+    background-attachment: fixed;
+}
+.highlight-main::after{
+   content: '';
+   position: absolute;
+   width: 100%;
+   height:100%;
+   left:0;
+   bottom:0;
+   background-color: rgba(0, 0, 0, 0.527);
+   z-index:-1;
+}

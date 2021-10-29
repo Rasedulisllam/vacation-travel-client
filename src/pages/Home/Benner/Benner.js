@@ -9,7 +9,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 
 const Benner = () => {
     return (
-        <Carousel infiniteLoop autoPlay showThumbs={false}>
+        <Carousel infiniteLoop autoPlay showThumbs={false} showIndicators={false} autoFocus={false}>
                 <div>
                     <img src={banner1} alt='slider images' />
                     <Container className="legend bg-transparent" style={{top:'30%'}} >

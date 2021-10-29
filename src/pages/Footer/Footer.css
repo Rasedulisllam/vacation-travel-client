@@ -1,0 +1,16 @@
+
+.footer-about-item{
+    color:rgba(255, 255, 255, 0.719);
+    transition: .3s;
+}
+.footer-about-item:hover{
+    color: #DC3545;
+    letter-spacing: 1px;
+}
+.footer-social-item{
+    color:rgba(255, 255, 255, 0.719);
+    transition: .3s;
+}
+.footer-social-item:hover{
+    color: #DC3545;
+}

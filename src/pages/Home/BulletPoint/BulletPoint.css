@@ -1,0 +1,7 @@
+
+.bulletItem{
+    display: flex;
+}
+.bulletItem .bullet-icon{
+    font-size: 44px;
+}
