@@ -3,12 +3,19 @@ import { Button, Card, Col, Row } from 'react-bootstrap';
 import StarRatings from 'react-star-ratings';
 import {MdOutlineWatchLater} from 'react-icons/md'
 import './Package.css'
+import { useHistory } from 'react-router';
 
 
 const Package = (props) => {
-    const {name,price,img,days,rating,location}=props.packag
+    const history=useHistory()
+    const {name,price,img,days,rating,location,_id}=props.packag
 
-    console.log(props.packag)
+
+    // handle book now button
+    const handleBookNow =(id)=>{
+        history.push(`/packageDetails/${id}`)
+    }
+
     return (
             <Col>
             <Card className='h-100 border-0 my-card'>
@@ -49,7 +56,11 @@ const Package = (props) => {
                             
                         </Col>
                         <Col xs={4} className='text-end d-flex align-items-end justify-content-end' >
-                             <Button variant='outline-danger' className='mt-auto'>book now</Button>
+                             <Button
+                             onClick={()=>handleBookNow(_id)}
+                             variant='outline-danger' 
+                             className='mt-auto'
+                             >book now</Button>
                         </Col>
                     </Row>
                 </Card.Body>
