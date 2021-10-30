@@ -34,6 +34,7 @@ const PackageDetails = (props) => {
         data.price=price;
         data.img=packag.img;
         data.status='painding';
+        data.days=packag.days;
         
         const url='http://localhost:5000/orderPackages';
         axios.post(url,data)
