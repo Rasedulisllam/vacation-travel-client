@@ -10,6 +10,8 @@ import AuthProvider from './Context/AuthProvider';
 import Login from './pages/Login/Login';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import MyBookings from './pages/MyBookings/MyBooking/MyBookings';
+import NotFound from './pages/NotFound/NotFound'
+import Admin from './pages/Admin/Admin/Admin';
 
 function App() {
   return (
@@ -27,11 +29,17 @@ function App() {
               <PrivateRoute path='/packageDetails/:id'>
                 <PackageDetails></PackageDetails>
               </PrivateRoute>
-              <Route path='/myBooking'>
+              <PrivateRoute path='/myBooking'>
                 <MyBookings></MyBookings>
-              </Route>
+              </PrivateRoute>
+              <PrivateRoute path='/admin'>
+                <Admin></Admin>
+              </PrivateRoute>
               <Route path='/login'>
                 <Login></Login>
+              </Route>
+              <Route path='*'>
+               <NotFound></NotFound>
               </Route>
           </Switch>
           <Footer></Footer>

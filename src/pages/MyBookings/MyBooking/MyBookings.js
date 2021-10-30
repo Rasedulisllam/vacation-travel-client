@@ -39,7 +39,7 @@ const MyBookings = () => {
     return (
         <div>
             <div className='py-3 bg-info text-white fw-bold'>
-                <h2>WELCOME TO VACVATION TRAVEL</h2>
+                <h2>WELCOME TO VACATION TRAVEL</h2>
             </div>
             <Container>
                 <Row>
