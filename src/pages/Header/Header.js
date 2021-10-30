@@ -1,9 +1,19 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import brand from '../../images/logo/logo3.png'
+import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
+    const history=useHistory()
+    const {user,logout}=useAuth()
+
+    // handle login button
+    const handleLogin =()=>{
+        history.push('/login')
+    }
+
     return (
         <Navbar bg="light" expand="lg">
             <Container >
@@ -21,8 +31,20 @@ const Header = () => {
                     
                 </Nav>
                
-                    <Button variant="outline-success">Login</Button>
-                    <Button variant="outline-warning">Logout</Button>
+                    {
+                        user.email?(
+
+                            <div>
+                                <span className='text-warning fw-bold me-4 '>{user.displayName}</span>
+                                <Button 
+                                onClick={logout}
+                                variant="outline-warning"
+                                >Logout</Button>
+                            </div>
+                        ):(
+                            <Button variant="outline-success" onClick={handleLogin}>Login</Button>
+                        )
+                    } 
                 </Navbar.Collapse>
             </Container>
             </Navbar>

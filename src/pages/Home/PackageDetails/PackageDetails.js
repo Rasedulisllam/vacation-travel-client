@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect,useRef } from 'react';
 import { useState } from 'react';
 import { Col, Container, Row,Button } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import StarRatings from 'react-star-ratings';
 import {MdOutlineWatchLater} from 'react-icons/md'
 import {IoIosPeople} from 'react-icons/io'
@@ -13,23 +13,54 @@ import {GoLocation} from 'react-icons/go'
 import {GiPriceTag} from 'react-icons/gi'
 import './PackageDetails.css'
 import { useForm } from 'react-hook-form';
+import useAuth from '../../../Hooks/useAuth';
 
 const PackageDetails = (props) => {
     const [packag,setPackag]=useState({});
     const {id} =useParams();
+    const peopleRef = useRef(1.8)
+    const [price,setPrice] = useState(0)
+    const {user}=useAuth()
+    const history =useHistory()
 
     // from control
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+
+    // save order on database
+    const onSubmit = formData => {
+        const data=formData;
+        data.people=peopleRef.current.value;
+        data.packagName=packag.name;
+        data.price=price;
+        data.img=packag.img;
+        data.status='painding';
+        
+        const url='http://localhost:5000/orderPackages';
+        axios.post(url,data)
+            .then(res =>{
+                if(res.data.insertedId){
+                    alert('Booking requist placed successfully')
+                    history.push('/')
+                }
+            })
+    };
 
     // load package deteils
     useEffect(()=>{
         const url=`http://localhost:5000/packages/${id}`
         axios.get(url)
             .then(res=>{
-                setPackag(res.data)
+                setPackag(res.data);
+                setPrice(res.data.price)
             })
-    },[])
+    },[id])
+
+    // control people depandent price value
+    const handlePeople=()=>{
+        const people=peopleRef.current.value;
+        const newPrice=(packag?.price*parseFloat(people)).toFixed(2);
+        setPrice(newPrice)
+    }
 
     return (
         <div>
@@ -79,7 +110,7 @@ const PackageDetails = (props) => {
                         <div className='package-detais-from'>
                             <div>
                                 <h5 className=' py-3 text-white m-0' style={{backgroundColor:'#02cbf3'}}>Price</h5>
-                                <h1 className='py-4 text-white m-0' style={{backgroundColor:'#2bccedcc'}}><GiPriceTag/> ${packag?.price}</h1>
+                                <h1 className='py-4 text-white m-0' style={{backgroundColor:'#2bccedcc'}}><GiPriceTag/> ${price}</h1>
                                 
                             </div>
 
@@ -89,12 +120,14 @@ const PackageDetails = (props) => {
                                     <input 
                                     className={errors.name?'my-input required':'my-input'} type="text" 
                                     placeholder='Full Name'
+                                    defaultValue={user.displayName}
                                     {...register("name", { required: true })} 
                                     /> 
 
                                     <input 
                                     className={errors.email?'my-input required':'my-input'} type="email"
                                     placeholder='Email Address' 
+                                    defaultValue={user.email}
                                     {...register("email", { required: true })} 
                                     /> 
 
@@ -109,6 +142,19 @@ const PackageDetails = (props) => {
                                     placeholder='Travel Date'
                                     {...register("date", { required: true })} 
                                     /> 
+
+                                    <select 
+                                    className={errors.people?'my-input required':'my-input'}
+                                    {...register("people")} 
+                                    ref={peopleRef}
+                                    onChange={handlePeople}
+                                    form="carform">
+                                    <option default value="1">Total people 1</option>
+                                    <option value="3">Total people 2-3</option>
+                                    <option value="6">Total people 4-6</option>
+                                    <option value="10">Total people 7-10</option>
+                                    </select>
+
                                     <textarea 
                                     className={errors.enquiry?'my-input required':'my-input'} type="date" 
                                     placeholder='Your Enquiry'
