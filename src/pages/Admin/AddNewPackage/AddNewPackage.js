@@ -23,7 +23,7 @@ const AddNewPackage = () => {
     return (
         <div>
             <div className='my-4 mb-5 mx-auto' style={{width:'90%',boxShadow:'1px 1px 20px #ddd'}}>
-                <div style={{backgroundColor:'#f9c93bd6'}} className='py-4 bg-info'>
+                <div className='py-4 bg-info'>
                     <h4 className='text-uppercase text-white'>add a new package</h4>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} className='px-5 mt-5 pb-5'>

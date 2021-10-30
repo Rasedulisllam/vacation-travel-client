@@ -48,7 +48,7 @@ const Booking = (props) => {
                             <Col xs={4} className='text-end '>
                                 <Button
                                  onClick={()=>cancelBooking(_id)}
-                                 variant='outline-danger me-3 fw-bold' 
+                                 variant='outline-danger px-4 me-3 fw-bold' 
                                  >Cancel</Button>
                             </Col>
                         </Row>                 

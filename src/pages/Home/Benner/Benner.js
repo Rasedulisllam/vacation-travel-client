@@ -18,7 +18,7 @@ const Benner = () => {
                                 <h1 className='fs-1  text-warning'>Find your parfect</h1>
                                 <h1 className='text-uppercase' style={{fontSize:'84px'}}>Vacation</h1>
                                 <p className='fs-5'>Bern, switzerland</p>
-                                <Button variant="outline-warning">Detail..</Button>
+                                <Button variant="outline-warning px-4">Detail..</Button>
                             </Col>
                             <Col md={6}></Col>
                         </Row>
@@ -32,7 +32,7 @@ const Benner = () => {
                                 <h1 className='text-uppercase text-primary' style={{fontSize:'84px'}}>special</h1>
                                 <h1 className='text-uppercase fs-1' >5 days in italy</h1>
                                 <p className='fs-5'>Italy , Rome</p>
-                                <Button variant="primary">Detail..</Button>
+                                <Button variant="primary px-4">Detail..</Button>
                             </Col>
                             <Col md={5}></Col>
                         </Row>
@@ -46,7 +46,7 @@ const Benner = () => {
                                 <h1 className='fs-1 text-warning text-uppercase'>Open your eyes to</h1>
                                 <h1 className='text-uppercase' style={{fontSize:'84px'}}>The hidden world</h1>
                                 <p className='fs-5'>Bern, switzerland</p>
-                                <Button variant="outline-warning">Detail..</Button>
+                                <Button variant="outline-warning px-4">Detail..</Button>
                             </Col>
                             <Col md={6}></Col>
                         </Row>

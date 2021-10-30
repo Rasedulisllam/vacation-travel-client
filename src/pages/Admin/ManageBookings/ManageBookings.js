@@ -32,7 +32,7 @@ const ManageBookings = () => {
 
     return (
         <div className=''>
-            <div style={{backgroundColor:'#f9c93bd6'}} className='py-2'>
+            <div className='py-4 my-4 bg-info'>
                 <h4 className='text-uppercase text-white'>all order request package</h4>
             </div>
             <div className='mb-5'>

@@ -68,14 +68,14 @@ const ManageBooking = (props) => {
                                     {
                                         (isAproved==='painding')?<Button
                                         onClick={()=>handleAproved(_id)}
-                                        variant='outline-success me-3 fw-bold' 
+                                        variant='outline-success me-3 px-4 fw-bold' 
                                         >Aprove</Button>:''
                                     }
                                </div>
                                <div className='d-block'>
                                     <Button
                                     onClick={()=>handleOrderedCancel(_id)}
-                                    variant='danger me-3 fw-bold' 
+                                    variant='danger me-3 px-3 fw-bold' 
                                     >
                                      <MdDelete/> Cancel</Button>
                                </div>

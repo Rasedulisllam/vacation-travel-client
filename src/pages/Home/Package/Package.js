@@ -58,7 +58,7 @@ const Package = (props) => {
                         <Col xs={4} className='text-end d-flex align-items-end justify-content-end' >
                              <Button
                              onClick={()=>handleBookNow(_id)}
-                             variant='outline-info' 
+                             variant='outline-info px-4' 
                              className='mt-auto'
                              >book now</Button>
                         </Col>

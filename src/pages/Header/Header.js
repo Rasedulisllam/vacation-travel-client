@@ -35,14 +35,14 @@ const Header = () => {
                         user.email?(
 
                             <div>
-                                <span className='text-warning fw-bold me-4 '>{user.displayName}</span>
+                                <span className='text-success fw-bold me-4 '>{user.displayName}</span>
                                 <Button 
                                 onClick={logout}
-                                variant="outline-warning"
+                                variant="warning px-4"
                                 >Logout</Button>
                             </div>
                         ):(
-                            <Button variant="outline-success" onClick={handleLogin}>Login</Button>
+                            <Button variant="info px-4" onClick={handleLogin}>Login</Button>
                         )
                     } 
                 </Navbar.Collapse>
