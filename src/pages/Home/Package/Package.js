@@ -39,7 +39,7 @@ const Package = (props) => {
                     
 
                     <Row className='mt-4'>
-                        <Col xs={8}>
+                        <Col xs={8} lg={8} md={12}>
                             <Card.Text className='fs-5'>
                                 <span className='text-muted'><MdOutlineWatchLater className='me-3 text-danger'/>{days} days</span>
                             </Card.Text>
@@ -55,11 +55,11 @@ const Package = (props) => {
                             </div>
                             
                         </Col>
-                        <Col xs={4} className='text-end d-flex align-items-end justify-content-end' >
+                        <Col xs={4} lg={4} md={6}  className='text-end d-flex align-items-end justify-content-end' >
                              <Button
                              onClick={()=>handleBookNow(_id)}
-                             variant='outline-info px-4' 
-                             className='mt-auto'
+                             variant='outline-info px-2' 
+                             className=' mt-3 text-uppercase d-block'
                              >book now</Button>
                         </Col>
                     </Row>

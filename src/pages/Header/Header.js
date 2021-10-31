@@ -25,9 +25,9 @@ const Header = () => {
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                    <Nav.Link as={Link} to='/home' className='fw-bold'>Home</Nav.Link>
-                    <Nav.Link as={Link} to='/myBooking' className='fw-bold'>My-Booking</Nav.Link>
-                    <Nav.Link as={Link} to='/admin' className='fw-bold'>Admin</Nav.Link>
+                    <Nav.Link as={Link} to='/home' className='fw-bold fs-5'>Home</Nav.Link>
+                    <Nav.Link as={Link} to='/myBooking' className='fw-bold fs-5'>My-Booking</Nav.Link>
+                    <Nav.Link as={Link} to='/admin' className='fw-bold fs-5'>Admin</Nav.Link>
                     
                 </Nav>
                
@@ -35,14 +35,14 @@ const Header = () => {
                         user.email?(
 
                             <div>
-                                <span className='text-success fw-bold me-4 '>{user.displayName}</span>
+                                <span className='text-success fw-bold  me-4 '>{user.displayName}</span>
                                 <Button 
                                 onClick={logout}
-                                variant="warning px-4"
+                                variant="warning px-4 fw-bold text-white"
                                 >Logout</Button>
                             </div>
                         ):(
-                            <Button variant="info px-4" onClick={handleLogin}>Login</Button>
+                            <Button variant="info px-4 fw-bold" onClick={handleLogin}>Login</Button>
                         )
                     } 
                 </Navbar.Collapse>
