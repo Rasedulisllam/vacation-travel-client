@@ -14,7 +14,7 @@ const ManageBooking = (props) => {
      const handleAproved=(id)=>{
         const isupdate=window.confirm('Press OK to APROVED')
         if(isupdate){
-            const url=`http://localhost:5000/orderPackages/${id}`;
+            const url=`https://warm-atoll-50010.herokuapp.com/orderPackages/${id}`;
             axios.put(url)
                 .then(res =>{
                     if(res.data.matchedCount){

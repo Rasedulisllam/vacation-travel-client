@@ -1,11 +1,20 @@
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import { MdDelete } from 'react-icons/md';
+import { useHistory } from 'react-router';
 import StarRatings from 'react-star-ratings';
 
 const AllPackage = (props) => {
+    const history=useHistory()
     const {name,img,price,rating,_id}=props.packag;
     const handleDeletePackage=props.handleDeletePackage;
+    
+
+    // update button handle
+    const handleUpdate =() =>{
+        history.push(`/admin/updatePackage/${_id}`)
+    }
+
     return (
         <div className='my-4 mx-3'>
             <Row className='p-2 py-3' style={{boxShadow:'1px 1px 20px #ddd'}}>
@@ -36,7 +45,8 @@ const AllPackage = (props) => {
                 <Col xs={5} className='d-flex justify-content-end'>
                         <div className='d-block me-4'>
                                 <Button
-                                variant='outline-warning me-3 px-4 fw-bold' 
+                                variant='outline-warning me-3 px-4 fw-bold'
+                                onClick={handleUpdate} 
                                 >update</Button>
                         </div>
                         <div className='d-block'>

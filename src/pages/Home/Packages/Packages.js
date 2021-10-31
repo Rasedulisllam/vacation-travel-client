@@ -9,7 +9,7 @@ const Packages = () => {
 
     // fetching all packages data from database
     useEffect(()=>{
-        const url='http://localhost:5000/packages'
+        const url='https://warm-atoll-50010.herokuapp.com/packages'
         axios.get(url)
             .then(res =>{
                 setPackages(res.data)

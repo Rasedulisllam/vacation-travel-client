@@ -7,7 +7,7 @@ const AllPackageManage = () => {
 
     // load all packages 
     useEffect(()=>{
-        const url='http://localhost:5000/packages'
+        const url='https://warm-atoll-50010.herokuapp.com/packages'
         axios.get(url)
             .then(res =>{
                 setPackages(res.data)
@@ -18,7 +18,7 @@ const AllPackageManage = () => {
     const handleDeletePackage =(id)=>{
             const passCode=window.prompt("ENTER ADMIN PASS CODE")
             if(passCode==='Admin#my'){
-                const url=`http://localhost:5000/Packages/${id}`;
+                const url=`https://warm-atoll-50010.herokuapp.com/Packages/${id}`;
                 axios.delete(url)
                     .then(res =>{
                         if(res.data.deletedCount>0){

@@ -36,7 +36,7 @@ const PackageDetails = (props) => {
         data.status='painding';
         data.days=packag.days;
         
-        const url='http://localhost:5000/orderPackages';
+        const url='https://warm-atoll-50010.herokuapp.com/orderPackages';
         axios.post(url,data)
             .then(res =>{
                 if(res.data.insertedId){
@@ -46,9 +46,9 @@ const PackageDetails = (props) => {
             })
     };
 
-    // load package deteils
+    // load package deteils by id
     useEffect(()=>{
-        const url=`http://localhost:5000/packages/${id}`
+        const url=`https://warm-atoll-50010.herokuapp.com/packages/${id}`
         axios.get(url)
             .then(res=>{
                 setPackag(res.data);

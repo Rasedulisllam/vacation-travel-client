@@ -7,6 +7,7 @@ import {CgCalendarDates} from 'react-icons/cg'
 import {MdUpdate} from 'react-icons/md'
 import AddNewPackage from '../AddNewPackage/AddNewPackage';
 import AllPackageManage from '../AllPackagesManage/AllPackageManage';
+import UpdatePackage from '../UpdatePackage/UpdatePackage';
 
 const Admin = () => {
 
@@ -63,6 +64,9 @@ const Admin = () => {
                                 </Route>
                                 <Route path='/admin/allPackage'>
                                     <AllPackageManage></AllPackageManage>
+                                </Route>
+                                <Route path='/admin/updatePackage/:id'>
+                                    <UpdatePackage></UpdatePackage>
                                 </Route>
                             </Switch>
                         </Col>

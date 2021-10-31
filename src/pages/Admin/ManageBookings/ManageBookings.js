@@ -7,7 +7,7 @@ const ManageBookings = () => {
 
     // load all ordered package data
     useEffect(()=>{
-        const url=`http://localhost:5000/orderPackages`;
+        const url=`https://warm-atoll-50010.herokuapp.com/orderPackages`;
             axios.get(url)
                 .then(res =>{
                    setBookingPackages(res.data)
@@ -18,7 +18,7 @@ const ManageBookings = () => {
     const handleOrderedCancel=(id)=>{
         const isDelete=window.confirm('Are you sure CANCEL this booking ?')
         if(isDelete){
-            const url=`http://localhost:5000/orderPackages/${id}`;
+            const url=`https://warm-atoll-50010.herokuapp.com/orderPackages/${id}`;
             axios.delete(url)
                 .then(res =>{
                     if(res.data.deletedCount>0){

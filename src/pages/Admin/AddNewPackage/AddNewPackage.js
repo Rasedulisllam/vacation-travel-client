@@ -10,7 +10,7 @@ const AddNewPackage = () => {
     const onSubmit = data => {
         data.rating=4;
         data.sale=0;
-        const url="http://localhost:5000/packages"
+        const url="https://warm-atoll-50010.herokuapp.com/packages"
         axios.post(url,data)
             .then(res => {
                 if(res.data.insertedId){
