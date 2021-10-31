@@ -1,0 +1,15 @@
+
+.benner-text{
+    font-size: 64px;
+}
+
+@media only screen and (max-width: 900px) {
+    .benner-text{
+        font-size: 44px;
+    }
+  }
+@media only screen and (max-width: 600px) {
+    .benner-text{
+        font-size: 24px;
+    }
+  }

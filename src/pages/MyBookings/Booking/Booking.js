@@ -12,10 +12,10 @@ const Booking = (props) => {
     return (
         <div className='my-4 mx-3'>
             <Row className='p-2' style={{boxShadow:'1px 1px 20px #ddd'}}>
-                <Col xs={4}>
+                <Col sm={4}>
                     <img className='img-fluid' src={img} alt="" />
                 </Col>
-                <Col xs={8} className='text-start p-1 d-flex flex-column justify-content-between'>
+                <Col sm={8} className='text-start p-1 d-flex flex-column justify-content-between'>
                    <div className='d-flex justify-content-between'>
                        <h5 className='w-50'>{packagName}</h5>
                        <div className='me-3'>
@@ -31,24 +31,24 @@ const Booking = (props) => {
                       
                    <div className=''>
                         <Row>
-                            <Col xs={4}>
+                            <Col sm={4} className='mt-4 mt-sm-0'>
                                 <span className='fw-bold fs-4 text-danger d-block'>
                                     ${price}
                                 </span>
                             </Col>
 
-                            <Col xs={2}>
+                            <Col sm={2} className='mt-4 mt-sm-0'>
                                 <span className='text-muted  d-block'><IoIosPeople className='text-danger fs-3'/> {people}</span>
                             </Col>
 
-                            <Col xs={2}>
+                            <Col sm={2} className='mt-4 mt-sm-0'>
                                 <span className='text-muted d-block '><MdOutlineWatchLater className=' text-danger fs-5'/> {days} Day</span>
                             </Col>
 
-                            <Col xs={4} className='text-end '>
+                            <Col sm={4} className='text-end '>
                                 <Button
                                  onClick={()=>cancelBooking(_id)}
-                                 variant='outline-danger px-4 me-3 fw-bold' 
+                                 variant='outline-danger px-4 me-3 me-sm-0 fw-bold' 
                                  >Cancel</Button>
                             </Col>
                         </Row>                 

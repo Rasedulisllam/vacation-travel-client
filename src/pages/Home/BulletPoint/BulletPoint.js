@@ -19,7 +19,7 @@ const BulletPoint = () => {
                             <p>Our expert team handpicked all destinations in this site</p>
                         </div>
                     </Col>
-                    <Col md={4} className='text-start bulletItem text-white'>
+                    <Col md={4} className='text-start bulletItem text-white mt-md-0 mt-4'>
                         <div>
                         <RiCustomerService2Line className='bullet-icon'></RiCustomerService2Line>
                         </div>
@@ -28,7 +28,7 @@ const BulletPoint = () => {
                             <p>We are here to help, before, during, and even after your trip.</p>
                         </div>
                     </Col>
-                    <Col md={4} className='text-start bulletItem text-white'>
+                    <Col md={4} className='text-start bulletItem text-white  mt-md-0 mt-4'>
                         <div>
                         <GiPriceTag className='bullet-icon'></GiPriceTag>
                         </div>

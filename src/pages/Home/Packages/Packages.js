@@ -1,18 +1,21 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row,Spinner } from 'react-bootstrap';
 import Package from '../Package/Package';
 
 const Packages = () => {
     const [packages,setPackages]=useState([]);
+    const [loading,setLoading]=useState(true)
 
 
     // fetching all packages data from database
     useEffect(()=>{
+        setLoading(true)
         const url='https://warm-atoll-50010.herokuapp.com/packages'
         axios.get(url)
             .then(res =>{
                 setPackages(res.data)
+                setLoading(false)
             })
     },[])
 
@@ -20,11 +23,19 @@ const Packages = () => {
         <Container className='text-start my-5'>
             <h1 className='text-uppercase text-danger'>Popular Tour Packages</h1>
 
-            <Row xs={1} md={2} className="g-5 mt-3">
+            {
+                loading?(
+                    <div className='text-center my-5'>
+                        <Spinner animation="border" variant="danger" />
+                    </div>
+                ):(
+                <Row xs={1} md={2} className="g-5 mt-3">
                 {
                     packages.map( packag => <Package key={packag._id} packag={packag}></Package>)
                 }
-            </Row>
+                </Row>
+                )
+            }
 
         </Container>
     );

@@ -15,7 +15,7 @@ const Header = () => {
     }
 
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="md" sticky="top" style={{backgroundColor:"#ced4dade"}}>
             <Container >
                 <Navbar.Brand href="#"><img width='104px' src={brand} alt="" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />

@@ -4,3 +4,18 @@
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.13);
     margin:4rem auto;
 }
+@media only screen and (max-width: 1000px) {
+    .login-form{
+        width:50%;
+    }
+  }
+@media only screen and (max-width: 750px) {
+    .login-form{
+        width:70%;
+    }
+  }
+@media only screen and (max-width: 550px) {
+    .login-form{
+        width:90%;
+    }
+  }

@@ -80,25 +80,25 @@ const PackageDetails = (props) => {
                                     starRatedColor="#f1c40f"
                                     numberOfStars={5}
                                     />
-                                    <span className="d-block ms-2">(6 Reviews)</span>
+                                    <span className="d-block ms-2">({packag?.review?packag.review:'0'} Reviews)</span>
                                 </div>
                             </div>
                         </div>
                         <div className='my-3 border border-secondary border-start-0 border-end-0 py-4'>
-                            <Row sm={3} className='text-start g-4 '>
-                                <Col className='fs-5'>
+                            <Row md={3} sm={2} xs={1} className='text-start g-1 g-md-4 '>
+                                <Col className='fs-5 my-sm-2 my-md-2 my-2'>
                                     <span className='text-muted'><MdOutlineWatchLater className='me-2 text-danger fs-3'/>{packag?.days} Days {packag?.days-1} Nights</span>
                                 </Col>
-                                <Col className='fs-5'>
+                                <Col className='fs-5 my-sm-2 my-md-2 my-2 '>
                                     <span className='text-muted'><IoIosPeople className='me-2 text-danger fs-3'/>Max People: 10</span>
                                 </Col>
-                                <Col className='fs-5'>
+                                <Col className='fs-5 my-sm-2 my-md-2 my-2'>
                                     <span className='text-muted'><BsWifi className='me-2 text-danger fs-3'/>Wifi Available</span>
                                 </Col>
-                                <Col className='fs-5'>
+                                <Col className='fs-5 my-sm-2 my-md-2 my-2'>
                                     <span className='text-muted'><MdEmojiPeople className='me-2 text-danger fs-3'/>Min Age : 10+</span>
                                 </Col>
-                                <Col className='fs-5'>
+                                <Col className='fs-5 my-sm-2 my-md-2 my-2'>
                                     <span className='text-muted'><GoLocation className='me-2 text-danger fs-3'/>Pickup: Airpot</span>
                                 </Col>
                             </Row>

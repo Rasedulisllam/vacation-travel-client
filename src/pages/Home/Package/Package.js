@@ -8,7 +8,7 @@ import { useHistory } from 'react-router';
 
 const Package = (props) => {
     const history=useHistory()
-    const {name,price,img,days,rating,location,_id}=props.packag
+    const {name,price,img,days,rating ,review,location,_id}=props.packag
 
 
     // handle book now button
@@ -51,7 +51,7 @@ const Package = (props) => {
                                 starRatedColor="#f1c40f"
                                 numberOfStars={5}
                                 />
-                                <span className="d-block ms-2">(6 Reviews)</span>
+                                <span className="d-block ms-2">({review?review:'0'} Reviews)</span>
                             </div>
                             
                         </Col>

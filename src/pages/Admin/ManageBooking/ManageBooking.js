@@ -28,14 +28,14 @@ const ManageBooking = (props) => {
     return (
         <div className='my-4 mx-3'>
             <Row className='p-2 py-3' style={{boxShadow:'1px 1px 20px #ddd'}}>
-                <Col xs={2}>
+                <Col lg={2} md={6}>
                     <img className='img-fluid' src={img} alt="" />
                 </Col>
-                <Col xs={4} className='text-start d-flex flex-column justify-content-between'>
+                <Col lg={4} md={6} className='text-start d-flex flex-column justify-content-between mt-4 mt-md-0'>
                    <div className='d-flex justify-content-between'>
                        <div>
-                            <h5 className='w-75' style={{fontSize:'18px'}}>{packagName}</h5>
-                            <span className='fw-bold fs-5 mt-3 text-danger d-block'>
+                            <h5 className='w-md-75' style={{fontSize:'18px'}}>{packagName}</h5>
+                            <span className='fw-bold fs-5 mt-md-3 text-danger d-block'>
                                     $ {price}
                             </span>
                        </div>
@@ -56,26 +56,26 @@ const ManageBooking = (props) => {
                    </div>
                 </Col>
 
-                <Col xs={6}>
+                <Col lg={6} md={12} className='mt-4 mt-lg-0'>
                     <Row>
-                        <Col xs={7} className='text-start'>
+                        <Col sm={7} className='text-start'>
                             <h5 className='fw-bold'>{name}</h5>
                             <p>EMAIL: <span className='text-primary'>{email}</span></p>
                             <p>NUMBER: {number}</p>
                         </Col>
-                        <Col xs={5} className='d-flex align-items-end flex-column bd-highlight justify-content-between'>
+                        <Col sm={5} className='d-flex align-items-end flex-sm-column bd-highlight justify-content-between  '>
                                <div className='d-block'>
                                     {
                                         (isAproved==='painding')?<Button
                                         onClick={()=>handleAproved(_id)}
-                                        variant='outline-success me-3 px-4 fw-bold' 
+                                        variant='outline-success me-md-0 px-4 fw-bold' 
                                         >Aprove</Button>:''
                                     }
                                </div>
                                <div className='d-block'>
                                     <Button
                                     onClick={()=>handleOrderedCancel(_id)}
-                                    variant='danger me-3 px-3 fw-bold' 
+                                    variant='danger me-md-0 fw-bold' 
                                     >
                                      <MdDelete/> Cancel</Button>
                                </div>

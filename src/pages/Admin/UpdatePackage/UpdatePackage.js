@@ -17,7 +17,7 @@ const UpdatePackage = () => {
         data.price=parseFloat(data.price);
         data.days=parseFloat(data.days);
         // console.log(data)
-        const url=`http://localhost:5000/packages/${id}`
+        const url=`https://warm-atoll-50010.herokuapp.com/packages/${id}`
         axios.put(url,data)
             .then(res =>{
                 console.log(res)

@@ -15,10 +15,10 @@ const Footer = () => {
             <div style={{backgroundColor:'#202020'}} className='py-5'>
                 <Container>
                     <Row>
-                        <Col md={3} className='text-start'>
+                        <Col md={3} sm={6} className='text-sm-start mt-4 mt-md-0'>
                             <img width='104px' src={brand} alt="" />
-                            <p className='text-muted mt-4 w-75'>What's on your travel bucket list? If you're like most people, the more you travel, the more places you add to your bucket list.</p>
-                            <ul className='d-flex list-unstyled text-white'>
+                            <p className='text-muted  mt-4 w-sm-75'>What's on your travel bucket list? If you're like most people, the more you travel, the more places you add to your bucket list.</p>
+                            <ul className='d-flex justify-content-center justify-content-sm-start list-unstyled text-white'>
                                 <li className='me-4'>
                                     Follow us:
                                 </li>
@@ -36,7 +36,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </Col>
-                        <Col md={3} className='text-white text-start'>
+                        <Col md={3} sm={6} className='text-white text-sm-start  mt-4 mt-md-0'>
                             <h3>About Us</h3>
                             <ul className='list-unstyled p-0 mt-4'>
                                 <li className='py-1  footer-about-item'>Our Story</li>
@@ -45,7 +45,7 @@ const Footer = () => {
                                 <li className='py-1  footer-about-item'>Be Our Partner</li>
                             </ul>
                         </Col>
-                        <Col md={3} className='text-white text-start'>
+                        <Col md={3} sm={6} className='text-white text-sm-start mt-4 mt-md-0'>
                             <h3>Support</h3>
                             <ul className='list-unstyled p-0 mt-4'>
                                 <li className='py-1  footer-about-item'>Customer Support</li>
@@ -53,7 +53,7 @@ const Footer = () => {
                                 <li className='py-1  footer-about-item'>Contact Channels</li>
                             </ul>
                         </Col>
-                        <Col md={3} className='text-white text-start'>
+                        <Col md={3} sm={6} className='text-white text-sm-start mt-4 mt-md-0'>
                             <div>
                                 <h3 className='text-danger mb-2'>Call Us</h3>
                                 <span><FaPhoneAlt  className='fs-4 me-2'/> +8801200010000</span>

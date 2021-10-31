@@ -6,7 +6,7 @@ import StarRatings from 'react-star-ratings';
 
 const AllPackage = (props) => {
     const history=useHistory()
-    const {name,img,price,rating,_id}=props.packag;
+    const {name,img,price,rating,review,_id}=props.packag;
     const handleDeletePackage=props.handleDeletePackage;
     
 
@@ -18,10 +18,10 @@ const AllPackage = (props) => {
     return (
         <div className='my-4 mx-3'>
             <Row className='p-2 py-3' style={{boxShadow:'1px 1px 20px #ddd'}}>
-                <Col xs={2}>
+                <Col lg={2} md={2}>
                     <img className='img-fluid' src={img} alt="" />
                 </Col>
-                <Col xs={5} className='text-start d-flex flex-column justify-content-between'>
+                <Col lg={5} md={7} className='text-start d-flex flex-column justify-content-between'>
                        <div>
                             <h5 className='w-75' style={{fontSize:'18px'}}>{name}</h5>
                             <div className='d-flex'>
@@ -37,22 +37,22 @@ const AllPackage = (props) => {
                                         numberOfStars={5}
                                         />
                                 </span>
-                                <span className="d-block ms-2 mt-3">(6 Reviews)</span>
+                                <span className="d-block ms-2 mt-3">({review?review:'0'} Reviews)</span>
                             </div>
                        </div>
                 </Col>
 
-                <Col xs={5} className='d-flex justify-content-end'>
+                <Col lg={5} md={3} className='d-flex flex-md-column mt-4 mt-md-0 flex-lg-row justify-content-between justify-content-lg-end'>
                         <div className='d-block me-4'>
                                 <Button
-                                variant='outline-warning me-3 px-4 fw-bold'
+                                variant='outline-warning px-4 fw-bold'
                                 onClick={handleUpdate} 
                                 >update</Button>
                         </div>
                         <div className='d-block'>
                             <Button
                             onClick={()=>handleDeletePackage(_id)}
-                            variant='danger me-3 fw-bold px-3' 
+                            variant='danger fw-bold px-lg-3' 
                             >
                                 <MdDelete/> Delete</Button>
                         </div>

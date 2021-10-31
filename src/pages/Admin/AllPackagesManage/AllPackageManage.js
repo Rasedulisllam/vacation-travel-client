@@ -16,8 +16,8 @@ const AllPackageManage = () => {
 
     // handle delete package
     const handleDeletePackage =(id)=>{
-            const passCode=window.prompt("ENTER ADMIN PASS CODE")
-            if(passCode==='Admin#my'){
+            const passCode=window.prompt("enter (admin) for delete")
+            if(passCode==='admin'){
                 const url=`https://warm-atoll-50010.herokuapp.com/Packages/${id}`;
                 axios.delete(url)
                     .then(res =>{
